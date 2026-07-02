@@ -9,32 +9,35 @@ function App() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("all");
 
-  // Load todos
+  // Load Todos
   useEffect(() => {
-    const savedTodos = JSON.parse(localStorage.getItem("todos"));
+    const saved = JSON.parse(localStorage.getItem("todos"));
 
-    if (savedTodos) {
-      setTodos(savedTodos);
+    if (saved) {
+      setTodos(saved);
     }
   }, []);
 
-  // Save todos
+  // Save Todos
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
+  // Add / Update Task
   function addTodo() {
-    if (task.trim() === "") return;
+    if (!task.trim()) return;
 
     if (editId !== null) {
       setTodos(
         todos.map((todo) =>
-          todo.id === editId ? { ...todo, text: task } : todo
+          todo.id === editId
+            ? { ...todo, text: task }
+            : todo
         )
       );
 
-      setEditId(null);
       setTask("");
+      setEditId(null);
       return;
     }
 
@@ -42,36 +45,67 @@ function App() {
       id: Date.now(),
       text: task,
       completed: false,
+      createdAt: new Date().toLocaleString(),
     };
 
     setTodos([...todos, newTodo]);
+
     setTask("");
   }
 
+  // Complete Task
   function toggleCompleted(id) {
     setTodos(
       todos.map((todo) =>
         todo.id === id
-          ? { ...todo, completed: !todo.completed }
+          ? {
+            ...todo,
+            completed: !todo.completed,
+          }
           : todo
       )
     );
   }
 
+  // Delete Task
   function deleteTodo(id) {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this task?"
+    );
 
-    if (editId === id) {
-      setEditId(null);
-      setTask("");
-    }
+    if (!confirmDelete) return;
+
+    setTodos(
+      todos.filter((todo) => todo.id !== id)
+    );
   }
 
+  // Edit
   function editTodo(todo) {
     setTask(todo.text);
     setEditId(todo.id);
   }
 
+  // Clear Completed
+  function clearCompleted() {
+    const completedTasks = todos.filter(
+      (todo) => todo.completed
+    );
+
+    if (completedTasks.length === 0) return;
+
+    const confirmClear = window.confirm(
+      "Delete all completed tasks?"
+    );
+
+    if (!confirmClear) return;
+
+    setTodos(
+      todos.filter((todo) => !todo.completed)
+    );
+  }
+
+  // Search + Filter
   const filteredTodos = todos.filter((todo) => {
     const matchesSearch = todo.text
       .toLowerCase()
@@ -86,51 +120,95 @@ function App() {
     return matchesSearch;
   });
 
-  const completed = todos.filter((todo) => todo.completed).length;
-  const remaining = todos.length - completed;
+  // Statistics
+  const total = todos.length;
+
+  const completed = todos.filter(
+    (todo) => todo.completed
+  ).length;
+
+  const remaining = total - completed;
+
+  const progress =
+    total === 0
+      ? 0
+      : Math.round((completed / total) * 100);
 
   return (
     <div className="container">
 
-      <h1>📝 My Todo App</h1>
+      <h1>📝 TaskFlow</h1>
 
       <p className="subtitle">
-        Stay organized every day
+        Stay organized. Stay productive.
       </p>
+
+      {/* Statistics */}
 
       <div className="stats">
 
         <div className="card">
-          <h2>{todos.length}</h2>
-          <p>Total</p>
+          <h2>{total}</h2>
+          <span>Total</span>
         </div>
 
         <div className="card">
           <h2>{completed}</h2>
-          <p>Completed</p>
+          <span>Completed</span>
         </div>
 
         <div className="card">
           <h2>{remaining}</h2>
-          <p>Remaining</p>
+          <span>Remaining</span>
         </div>
 
       </div>
+
+      {/* Progress */}
+
+      <div className="progressSection">
+
+        <div className="progressText">
+
+          <span>Progress</span>
+
+          <span>{progress}%</span>
+
+        </div>
+
+        <div className="progressBar">
+
+          <div
+            className="progress"
+            style={{
+              width: `${progress}%`,
+            }}
+          ></div>
+
+        </div>
+
+      </div>
+
+      {/* Input */}
 
       <div className="inputBox">
 
         <input
           type="text"
-          placeholder="Enter a task..."
+          placeholder="What would you like to accomplish today?"
           value={task}
-          onChange={(e) => setTask(e.target.value)}
+          onChange={(e) =>
+            setTask(e.target.value)
+          }
           onKeyDown={(e) => {
-            if (e.key === "Enter") addTodo();
+            if (e.key === "Enter")
+              addTodo();
           }}
         />
 
         <button
           className="addBtn"
+          disabled={!task.trim()}
           onClick={addTodo}
         >
           {editId ? "Update" : "Add"}
@@ -138,62 +216,91 @@ function App() {
 
       </div>
 
+      {/* Search */}
+
       <input
         className="search"
         type="text"
         placeholder="🔍 Search task..."
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) =>
+          setSearch(e.target.value)
+        }
       />
+
+      {/* Filters */}
 
       <div className="filters">
 
         <button
-          className={filter === "all" ? "activeFilter" : ""}
-          onClick={() => setFilter("all")}
+          className={
+            filter === "all"
+              ? "activeFilter"
+              : ""
+          }
+          onClick={() =>
+            setFilter("all")
+          }
         >
           All
         </button>
 
         <button
-          className={filter === "active" ? "activeFilter" : ""}
-          onClick={() => setFilter("active")}
+          className={
+            filter === "active"
+              ? "activeFilter"
+              : ""
+          }
+          onClick={() =>
+            setFilter("active")
+          }
         >
           Active
         </button>
 
         <button
-          className={filter === "completed" ? "activeFilter" : ""}
-          onClick={() => setFilter("completed")}
+          className={
+            filter === "completed"
+              ? "activeFilter"
+              : ""
+          }
+          onClick={() =>
+            setFilter("completed")
+          }
         >
           Completed
         </button>
 
       </div>
 
+      {/* Todo List */}
+
       {filteredTodos.length === 0 ? (
         <div className="empty">
-
           <h2>📋</h2>
 
-          <p>No tasks found.</p>
+          <h3>No Tasks Found</h3>
 
+          <p>
+            Start by adding your first task.
+          </p>
         </div>
       ) : (
         filteredTodos.map((todo) => (
           <div
-            className="todo"
+            className={`todo ${todo.completed ? "done" : ""
+              }`}
             key={todo.id}
           >
-            <h3
-              className={
-                todo.completed
-                  ? "completed"
-                  : ""
-              }
-            >
-              {todo.text}
-            </h3>
+            <div className="todoContent">
+
+              <h3>{todo.text}</h3>
+
+              <small>
+                Created: {todo.createdAt}
+              </small>
+
+            </div>
 
             <div className="buttons">
 
@@ -227,9 +334,37 @@ function App() {
               </button>
 
             </div>
+
           </div>
         ))
       )}
+
+      {/* Clear Completed */}
+
+      {completed > 0 && (
+
+        <div className="clearSection">
+
+          <button
+            className="clearBtn"
+            onClick={clearCompleted}
+          >
+            Clear Completed
+          </button>
+
+        </div>
+
+      )}
+
+      {/* Footer */}
+
+      <footer>
+
+        <p>
+          Built with ❤️ using React
+        </p>
+
+      </footer>
 
     </div>
   );

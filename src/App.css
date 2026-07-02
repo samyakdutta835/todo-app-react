@@ -1,5 +1,12 @@
-/* Google Font */
+/* ===========================
+   Google Font
+=========================== */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ===========================
+   Global
+=========================== */
 
 *{
     margin:0;
@@ -9,38 +16,43 @@
 }
 
 body{
-    background:linear-gradient(135deg,#5d5fc7,#000000,#334155);
+    background:linear-gradient(135deg,#1b3778,#000000,#6084b7);
     min-height:100vh;
     display:flex;
     justify-content:center;
-    align-items:flex-start;
     padding:40px 20px;
 }
 
 .container{
     width:100%;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(14px);
     border:1px solid rgba(255,255,255,.1);
-    border-radius:20px;
+    border-radius:22px;
     padding:35px;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
 }
+
+/* ===========================
+   Header
+=========================== */
 
 h1{
     text-align:center;
-    color:white;
-    font-size:2.3rem;
+    color:#fff;
+    font-size:2.4rem;
 }
 
 .subtitle{
     text-align:center;
     color:#cbd5e1;
-    margin-top:10px;
+    margin-top:8px;
     margin-bottom:30px;
 }
 
-/* ---------- Stats ---------- */
+/* ===========================
+   Stats
+=========================== */
 
 .stats{
     display:grid;
@@ -51,8 +63,7 @@ h1{
 
 .card{
     background:#1e293b;
-    color:white;
-    padding:20px;
+    padding:25px;
     border-radius:15px;
     text-align:center;
     transition:.3s;
@@ -60,20 +71,50 @@ h1{
 
 .card:hover{
     transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    box-shadow:0 12px 25px rgba(0,0,0,.3);
 }
 
 .card h2{
-    font-size:2rem;
     color:#38bdf8;
+    font-size:2rem;
 }
 
-.card p{
-    margin-top:8px;
+.card span{
     color:#cbd5e1;
 }
 
-/* ---------- Input ---------- */
+/* ===========================
+   Progress
+=========================== */
+
+.progressSection{
+    margin-bottom:30px;
+}
+
+.progressText{
+    display:flex;
+    justify-content:space-between;
+    color:white;
+    margin-bottom:10px;
+}
+
+.progressBar{
+    height:12px;
+    background:#475569;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.progress{
+    height:100%;
+    background:#22c55e;
+    border-radius:50px;
+    transition:.4s;
+}
+
+/* ===========================
+   Input
+=========================== */
 
 .inputBox{
     display:flex;
@@ -85,53 +126,62 @@ h1{
     flex:1;
     padding:15px;
     border:none;
-    outline:none;
     border-radius:12px;
     font-size:16px;
+    outline:none;
 }
 
 .addBtn{
     background:#2563eb;
     color:white;
     border:none;
-    padding:15px 30px;
     border-radius:12px;
+    padding:15px 25px;
     cursor:pointer;
     transition:.3s;
 }
 
-.addBtn:hover{
+.addBtn:hover:not(:disabled){
     background:#1d4ed8;
 }
 
-/* ---------- Search ---------- */
+.addBtn:disabled{
+    background:#64748b;
+    cursor:not-allowed;
+}
+
+/* ===========================
+   Search
+=========================== */
 
 .search{
     width:100%;
     padding:14px;
     border:none;
-    outline:none;
     border-radius:12px;
+    outline:none;
     margin-bottom:20px;
     font-size:16px;
 }
 
-/* ---------- Filters ---------- */
+/* ===========================
+   Filters
+=========================== */
 
 .filters{
     display:flex;
     justify-content:center;
-    gap:15px;
+    gap:12px;
     margin-bottom:30px;
 }
 
 .filters button{
+    background:#334155;
+    color:white;
     border:none;
     padding:10px 22px;
     border-radius:10px;
     cursor:pointer;
-    background:#334155;
-    color:white;
     transition:.3s;
 }
 
@@ -143,16 +193,20 @@ h1{
     background:#2563eb !important;
 }
 
-/* ---------- Todo Card ---------- */
+/* ===========================
+   Todo Card
+=========================== */
 
 .todo{
     background:#1e293b;
     border-radius:16px;
     padding:20px;
     margin-bottom:18px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     transition:.3s;
 }
 
@@ -161,19 +215,29 @@ h1{
     box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 
-.todo h3{
+.todoContent{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.todoContent h3{
     color:white;
-    flex:1;
-    font-size:18px;
-    word-break:break-word;
+    font-size:19px;
 }
 
-.completed{
+.todoContent small{
+    color:#94a3b8;
+}
+
+.done h3{
     text-decoration:line-through;
-    opacity:.55;
+    opacity:.6;
 }
 
-/* ---------- Buttons ---------- */
+/* ===========================
+   Buttons
+=========================== */
 
 .buttons{
     display:flex;
@@ -182,11 +246,11 @@ h1{
 
 .buttons button{
     border:none;
-    padding:10px 14px;
+    color:white;
+    padding:10px 15px;
     border-radius:10px;
     cursor:pointer;
     transition:.3s;
-    color:white;
 }
 
 .buttons button:hover{
@@ -194,11 +258,11 @@ h1{
 }
 
 .completeBtn{
-    background:#16a34a;
+    background:#22c55e;
 }
 
 .completeBtn:hover{
-    background:#15803d;
+    background:#16a34a;
 }
 
 .editBtn{
@@ -217,24 +281,68 @@ h1{
     background:#dc2626;
 }
 
-/* ---------- Empty ---------- */
+/* ===========================
+   Clear Button
+=========================== */
+
+.clearSection{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.clearBtn{
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.clearBtn:hover{
+    background:#dc2626;
+}
+
+/* ===========================
+   Empty
+=========================== */
 
 .empty{
     text-align:center;
     color:white;
-    padding:50px;
+    padding:60px 0;
 }
 
 .empty h2{
     font-size:70px;
 }
 
-.empty p{
+.empty h3{
     margin-top:15px;
-    color:#cbd5e1;
 }
 
-/* ---------- Scroll ---------- */
+.empty p{
+    color:#cbd5e1;
+    margin-top:10px;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+    text-align:center;
+    color:#94a3b8;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:20px;
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
 
 ::-webkit-scrollbar{
     width:8px;
@@ -245,7 +353,9 @@ h1{
     border-radius:10px;
 }
 
-/* ---------- Responsive ---------- */
+/* ===========================
+   Responsive
+=========================== */
 
 @media(max-width:768px){
 
@@ -265,6 +375,10 @@ h1{
     flex-direction:column;
     align-items:flex-start;
     gap:20px;
+}
+
+.todoContent{
+    width:100%;
 }
 
 .buttons{
