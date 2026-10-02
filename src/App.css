@@ -8,387 +8,387 @@
    Global
 =========================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Poppins",sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-body{
-    background:linear-gradient(135deg,#1b3778,#000000,#6084b7);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    padding:40px 20px;
+body {
+    background: linear-gradient(135deg, #1b3778, #000000, #6084b7);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
 }
 
-.container{
-    width:100%;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(14px);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:22px;
-    padding:35px;
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
+.container {
+    width: 100%;
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
 }
 
 /* ===========================
    Header
 =========================== */
 
-h1{
-    text-align:center;
-    color:#fff;
-    font-size:2.4rem;
+h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.4rem;
 }
 
-.subtitle{
-    text-align:center;
-    color:#cbd5e1;
-    margin-top:8px;
-    margin-bottom:30px;
+.subtitle {
+    text-align: center;
+    color: #cbd5e1;
+    margin-top: 8px;
+    margin-bottom: 30px;
 }
 
 /* ===========================
    Stats
 =========================== */
 
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    margin-bottom:30px;
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
-.card{
-    background:#1e293b;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-    transition:.3s;
+.card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: .3s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 25px rgba(0,0,0,.3);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .3);
 }
 
-.card h2{
-    color:#38bdf8;
-    font-size:2rem;
+.card h2 {
+    color: #38bdf8;
+    font-size: 2rem;
 }
 
-.card span{
-    color:#cbd5e1;
+.card span {
+    color: #cbd5e1;
 }
 
 /* ===========================
    Progress
 =========================== */
 
-.progressSection{
-    margin-bottom:30px;
+.progressSection {
+    margin-bottom: 30px;
 }
 
-.progressText{
-    display:flex;
-    justify-content:space-between;
-    color:white;
-    margin-bottom:10px;
+.progressText {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 10px;
 }
 
-.progressBar{
-    height:12px;
-    background:#475569;
-    border-radius:50px;
-    overflow:hidden;
+.progressBar {
+    height: 12px;
+    background: #475569;
+    border-radius: 50px;
+    overflow: hidden;
 }
 
-.progress{
-    height:100%;
-    background:#22c55e;
-    border-radius:50px;
-    transition:.4s;
+.progress {
+    height: 100%;
+    background: #22c55e;
+    border-radius: 50px;
+    transition: .4s;
 }
 
 /* ===========================
    Input
 =========================== */
 
-.inputBox{
-    display:flex;
-    gap:15px;
-    margin-bottom:20px;
+.inputBox {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.inputBox input{
-    flex:1;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    font-size:16px;
-    outline:none;
+.inputBox input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
 }
 
-.addBtn{
-    background:#2563eb;
-    color:white;
-    border:none;
-    border-radius:12px;
-    padding:15px 25px;
-    cursor:pointer;
-    transition:.3s;
+.addBtn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.addBtn:hover:not(:disabled){
-    background:#1d4ed8;
+.addBtn:hover:not(:disabled) {
+    background: #1d4ed8;
 }
 
-.addBtn:disabled{
-    background:#64748b;
-    cursor:not-allowed;
+.addBtn:disabled {
+    background: #64748b;
+    cursor: not-allowed;
 }
 
 /* ===========================
    Search
 =========================== */
 
-.search{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    outline:none;
-    margin-bottom:20px;
-    font-size:16px;
+.search {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    margin-bottom: 20px;
+    font-size: 16px;
 }
 
 /* ===========================
    Filters
 =========================== */
 
-.filters{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    margin-bottom:30px;
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
 }
 
-.filters button{
-    background:#334155;
-    color:white;
-    border:none;
-    padding:10px 22px;
-    border-radius:10px;
-    cursor:pointer;
-    transition:.3s;
+.filters button {
+    background: #334155;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.filters button:hover{
-    background:#475569;
+.filters button:hover {
+    background: #475569;
 }
 
-.activeFilter{
-    background:#2563eb !important;
+.activeFilter {
+    background: #2563eb !important;
 }
 
 /* ===========================
    Todo Card
 =========================== */
 
-.todo{
-    background:#1e293b;
-    border-radius:16px;
-    padding:20px;
-    margin-bottom:18px;
+.todo {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 18px;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    transition:.3s;
+    transition: .3s;
 }
 
-.todo:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
+.todo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
 }
 
-.todoContent{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
+.todoContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.todoContent h3{
-    color:white;
-    font-size:19px;
+.todoContent h3 {
+    color: white;
+    font-size: 19px;
 }
 
-.todoContent small{
-    color:#94a3b8;
+.todoContent small {
+    color: #94a3b8;
 }
 
-.done h3{
-    text-decoration:line-through;
-    opacity:.6;
+.done h3 {
+    text-decoration: line-through;
+    opacity: .6;
 }
 
 /* ===========================
    Buttons
 =========================== */
 
-.buttons{
-    display:flex;
-    gap:10px;
+.buttons {
+    display: flex;
+    gap: 10px;
 }
 
-.buttons button{
-    border:none;
-    color:white;
-    padding:10px 15px;
-    border-radius:10px;
-    cursor:pointer;
-    transition:.3s;
+.buttons button {
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.buttons button:hover{
-    transform:scale(1.05);
+.buttons button:hover {
+    transform: scale(1.05);
 }
 
-.completeBtn{
-    background:#22c55e;
+.completeBtn {
+    background: #22c55e;
 }
 
-.completeBtn:hover{
-    background:#16a34a;
+.completeBtn:hover {
+    background: #16a34a;
 }
 
-.editBtn{
-    background:#f59e0b;
+.editBtn {
+    background: #f59e0b;
 }
 
-.editBtn:hover{
-    background:#d97706;
+.editBtn:hover {
+    background: #d97706;
 }
 
-.deleteBtn{
-    background:#ef4444;
+.deleteBtn {
+    background: #ef4444;
 }
 
-.deleteBtn:hover{
-    background:#dc2626;
+.deleteBtn:hover {
+    background: #dc2626;
 }
 
 /* ===========================
    Clear Button
 =========================== */
 
-.clearSection{
-    display:flex;
-    justify-content:center;
-    margin-top:30px;
+.clearSection {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-.clearBtn{
-    background:#ef4444;
-    color:white;
-    border:none;
-    padding:14px 30px;
-    border-radius:12px;
-    cursor:pointer;
-    transition:.3s;
+.clearBtn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.clearBtn:hover{
-    background:#dc2626;
+.clearBtn:hover {
+    background: #dc2626;
 }
 
 /* ===========================
    Empty
 =========================== */
 
-.empty{
-    text-align:center;
-    color:white;
-    padding:60px 0;
+.empty {
+    text-align: center;
+    color: white;
+    padding: 60px 0;
 }
 
-.empty h2{
-    font-size:70px;
+.empty h2 {
+    font-size: 70px;
 }
 
-.empty h3{
-    margin-top:15px;
+.empty h3 {
+    margin-top: 15px;
 }
 
-.empty p{
-    color:#cbd5e1;
-    margin-top:10px;
+.empty p {
+    color: #cbd5e1;
+    margin-top: 10px;
 }
 
 /* ===========================
    Footer
 =========================== */
 
-footer{
-    text-align:center;
-    color:#94a3b8;
-    margin-top:40px;
-    border-top:1px solid rgba(255,255,255,.1);
-    padding-top:20px;
+footer {
+    text-align: center;
+    color: #94a3b8;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    padding-top: 20px;
 }
 
 /* ===========================
    Scrollbar
 =========================== */
 
-::-webkit-scrollbar{
-    width:8px;
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-::-webkit-scrollbar-thumb{
-    background:#64748b;
-    border-radius:10px;
+::-webkit-scrollbar-thumb {
+    background: #64748b;
+    border-radius: 10px;
 }
 
 /* ===========================
    Responsive
 =========================== */
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-.stats{
-    grid-template-columns:1fr;
-}
+    .stats {
+        grid-template-columns: 1fr;
+    }
 
-.inputBox{
-    flex-direction:column;
-}
+    .inputBox {
+        flex-direction: column;
+    }
 
-.addBtn{
-    width:100%;
-}
+    .addBtn {
+        width: 100%;
+    }
 
-.todo{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:20px;
-}
+    .todo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
 
-.todoContent{
-    width:100%;
-}
+    .todoContent {
+        width: 100%;
+    }
 
-.buttons{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-}
+    .buttons {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-.filters{
-    flex-wrap:wrap;
-}
+    .filters {
+        flex-wrap: wrap;
+    }
 
 }
