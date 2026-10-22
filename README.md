@@ -1,94 +1,87 @@
-# 📝 React Todo App
+<div align="center">
 
-A modern, responsive, and user-friendly **Todo Application** built with **React** and **Vite**. This project allows users to efficiently manage daily tasks with features such as adding, editing, deleting, searching, filtering, and persisting tasks using the browser's Local Storage.
+<h1>✅ TaskFlow — React Todo App</h1>
+
+### Plan clearly. Focus better. Get things done.
+
+A clean, responsive task manager built with **React and Vite**. Create and update tasks, track your progress, search your list, and keep your tasks saved in your browser with Local Storage.
+
+<p>
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=20232A" alt="React">
+  <img src="https://img.shields.io/badge/Vite-Development%20Server-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/CSS3-Responsive-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/Storage-Local%20Storage-16A34A?style=for-the-badge" alt="Local Storage">
+</p>
+
+</div>
 
 ---
 
-## 📖 Overview
+## 📌 Overview
 
-The React Todo App is designed to demonstrate fundamental React concepts while providing a clean and intuitive user interface. It showcases state management, event handling, conditional rendering, and data persistence, making it an excellent beginner-to-intermediate React project.
+**TaskFlow** is a lightweight Todo application created with React. It offers a straightforward workspace for managing everyday tasks without requiring an account or a backend service.
 
----
+Add a task, update it when plans change, mark it complete when it is done, and use search and filters to find the items that matter. A statistics section and progress bar provide a quick overview of your workload, while browser Local Storage keeps your list available between visits in the same browser.
+
+> **Project scope:** TaskFlow is a client-side application. Tasks are saved locally in the current browser and are not synced across devices or accounts.
 
 ## ✨ Features
 
-- ➕ Add new tasks
-- ✏️ Edit existing tasks
-- ✅ Mark tasks as completed or undo completion
-- 🗑️ Delete tasks
-- 🔍 Search tasks in real time
-- 📂 Filter tasks (All, Active, Completed)
-- 💾 Automatically save tasks using Local Storage
-- 📊 Task statistics (Total, Completed, Remaining)
-- ⌨️ Add tasks by pressing the **Enter** key
-- 📱 Responsive design for desktop, tablet, and mobile devices
-- 🎨 Modern user interface with smooth hover effects
+- **Create tasks** — add tasks using the input field or press `Enter`.
+- **Edit tasks** — update a task without creating a duplicate.
+- **Complete or undo** — mark tasks as finished and reopen them when needed.
+- **Delete tasks** — remove individual tasks with a confirmation prompt.
+- **Clear completed tasks** — remove all completed items after confirmation.
+- **Instant search** — find tasks by matching their text.
+- **Status filters** — view all, active, or completed tasks.
+- **Task statistics** — see total, completed, and remaining tasks.
+- **Completion progress** — track your completion percentage with a progress bar.
+- **Automatic persistence** — save and reload tasks using the browser's Local Storage API.
+- **Creation timestamps** — view when each task was created.
+- **Responsive interface** — layouts adapt for desktop, tablet, and mobile screens.
+- **Helpful empty state** — clear feedback when there are no matching tasks.
 
----
+## 🖼️ Screenshots
 
-## 📸 Screenshots
+### Desktop
 
-### Desktop View
+![TaskFlow desktop screenshot](screenshots/home.png)
 
-![Desktop View](screenshots/home.png)
+### Mobile
 
-### Mobile View
+![TaskFlow mobile screenshot](screenshots/mobile.png)
 
-![Mobile View](screenshots/mobile.png)
+## 🧰 Tech Stack
 
----
-
-## 🛠️ Tech Stack
-
-- **React**
-- **Vite**
-- **JavaScript (ES6+)**
-- **CSS3**
-- **HTML5**
-- **Local Storage API**
-
----
-
-## 📂 Project Structure
-
-```text
-todoapp/
-│
-├── public/
-│   ├── favicon.svg
-│   └── icons.svg
-│
-├── screenshots/
-│   ├── home.png
-│   └── mobile.png
-│
-├── src/
-│   ├── assets/
-│   ├── App.jsx
-│   ├── App.css
-│   ├── index.css
-│   └── main.jsx
-│
-├── .gitignore
-├── eslint.config.js
-├── index.html
-├── package.json
-├── package-lock.json
-├── vite.config.js
-└── README.md
-```
-
----
+| Technology | Purpose |
+|---|---|
+| **React** | Builds the interactive user interface with functional components. |
+| **Vite** | Provides the development server and production build tooling. |
+| **JavaScript (ES6+)** | Implements task operations, searching, filtering, and progress calculations. |
+| **CSS3** | Handles the visual design, layout, transitions, and responsive styling. |
+| **Local Storage API** | Persists task data in the browser. |
+| **ESLint** | Helps identify code-quality issues during development. |
 
 ## 🚀 Getting Started
 
+### Prerequisites
+
+Install the following on your machine:
+
+- [Node.js](https://nodejs.org/) — use a current version compatible with the Vite version in `package.json`.
+- npm — included with Node.js.
+- A modern web browser.
+
 ### 1. Clone the repository
+
+Replace `YOUR_USERNAME` with your GitHub username and adjust the repository name if yours is different.
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/react-todo-app.git
 ```
 
-### 2. Navigate to the project directory
+### 2. Move into the project directory
 
 ```bash
 cd react-todo-app
@@ -106,101 +99,135 @@ npm install
 npm run dev
 ```
 
-Open your browser and visit:
+Open the local URL printed in your terminal. Vite commonly uses `http://localhost:5173` when that port is available.
 
-```text
-http://localhost:5173
-```
+## 📦 Available Scripts
 
----
+| Command | Description |
+|---|---|
+| `npm install` | Install the project dependencies. |
+| `npm run dev` | Start the local development server. |
+| `npm run build` | Create an optimized production build in `dist/`. |
+| `npm run preview` | Preview the production build locally. |
+| `npm run lint` | Run ESLint against the project. |
 
-## 📦 Build for Production
+### Build for production
 
 ```bash
 npm run build
 ```
 
-Preview the production build:
+### Preview the production build
 
 ```bash
 npm run preview
 ```
 
----
+## 📂 Project Structure
 
-## 📋 Available Scripts
+```text
+react-todo-app/
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
+├── screenshots/
+│   ├── home.png
+│   ├── homep.png
+│   ├── mobile.png
+│   └── mobilep.png
+├── src/
+│   ├── assets/
+│   │   ├── hero.png
+│   │   ├── react.svg
+│   │   └── vite.svg
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
+```
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm run dev` | Start the development server |
-| `npm run build` | Build the project for production |
-| `npm run preview` | Preview the production build |
+## 🧠 React Concepts Demonstrated
 
----
+This project is a practical example of several core front-end concepts:
 
-## 📚 What I Learned
+- Functional React components.
+- The `useState` Hook for tasks, search, filters, and editing state.
+- The `useEffect` Hook for loading and saving data.
+- Controlled form inputs and keyboard event handling.
+- CRUD-style operations: create, read, update, and delete.
+- List rendering and conditional rendering.
+- Derived statistics and progress calculations.
+- Browser Local Storage for client-side persistence.
+- Responsive styling with CSS media queries.
 
-This project helped me strengthen my understanding of:
+## 💾 How Task Storage Works
 
-- React Functional Components
-- React Hooks (`useState`, `useEffect`)
-- State Management
-- CRUD Operations
-- Event Handling
-- Conditional Rendering
-- Local Storage
-- Responsive UI Design
-- Modern CSS Styling
+TaskFlow reads the saved task list from Local Storage when the application starts and writes updates whenever the task state changes.
 
----
+This means:
 
-## 🎯 Future Improvements
+- Tasks remain available after refreshing or reopening the app in the same browser profile.
+- Clearing browser site data or Local Storage can remove saved tasks.
+- Tasks are not automatically shared between browsers, devices, or users.
+- The project does not send task data to a server.
 
-- 🌙 Dark / Light Theme Toggle
-- 📅 Due Dates
-- 🏷️ Task Categories
-- ⭐ Task Priorities
-- 🔔 Toast Notifications
-- ☁️ Cloud Synchronization (Firebase)
+## 🔮 Future Improvements
 
----
+Potential next steps for the project include:
 
-## 👨‍💻 Author
-
-Samyak Dutta
-
-<!-- - GitHub: https://github.com/YOUR_USERNAME
-- LinkedIn: https://linkedin.com/in/YOUR_LINKEDIN *(optional)* -->
-
----
+- [ ] Add due dates and reminders.
+- [ ] Add task priority levels and categories.
+- [ ] Add a light/dark theme switcher.
+- [ ] Add toast notifications and undo actions.
+- [ ] Support drag-and-drop task ordering.
+- [ ] Add export and import for task backups.
+- [ ] Add optional cloud sync and user accounts.
+- [ ] Improve accessibility and keyboard navigation.
 
 ## 🤝 Contributing
 
-Contributions are welcome!
+Suggestions and improvements are welcome.
 
-1. Fork this repository.
-2. Create a new feature branch.
-3. Commit your changes.
-4. Push to your branch.
-5. Open a Pull Request.
+1. Fork the repository.
+2. Create a feature branch:
 
----
+   ```bash
+   git checkout -b feature/your-improvement
+   ```
+
+3. Make your changes and test the affected features.
+4. Run the checks:
+
+   ```bash
+   npm run lint
+   npm run build
+   ```
+
+5. Commit your changes and open a pull request.
 
 ## 📄 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the **MIT License**. See the [`LICENSE`](LICENSE) file for details.
 
-See the [LICENSE](LICENSE) file for details.
+## 👨‍💻 Author
 
----
+**Samyak Dutta**  
 
-## ⭐ Show Your Support
-
-If you found this project helpful or interesting, please consider giving it a **⭐ Star** on GitHub.
-
-It helps support the project and encourages future improvements.
 
 ---
 
-Made with ❤️ using **React**.
+<div align="center">
+
+**Small steps. Consistent progress. Better days.**
+
+If TaskFlow was useful to you, consider giving the repository a ⭐ on GitHub.
+
+</div>
